@@ -26,6 +26,12 @@ public class EnrollmentToFhir implements Function<Enrollment, Task> {
                         enrollment.getDetails().getEntity().getProviderType()
                 )
         );
+        task.addInput(
+                new AcceptsEftToFhir().apply(
+                        enrollment.getDetails().getEntity()
+                )
+        );
+
         task.addContained(requester);
 
         return task;
