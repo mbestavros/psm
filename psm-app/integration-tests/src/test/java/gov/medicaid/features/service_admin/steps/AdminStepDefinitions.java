@@ -48,4 +48,9 @@ public class AdminStepDefinitions {
         // assert fails because the page is opened in a separate tab
         generalSteps.clickLinkAssertTitle(".autoScreeningResultLink", "Screening Log");
     }
+
+    @When("^I am on the Screenings page$")
+    public void i_am_on_the_screenings_page() {
+        generalSteps.clickLinkAssertTitle(".screeningsLink", "Screenings");
+    }
 }
